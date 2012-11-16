@@ -1,5 +1,5 @@
-class shorewall::rules::nfsd {
-    shorewall::rule { 'net-me-portmap-tcp':
+class shorewall6::rules::nfsd {
+    shorewall6::rule { 'net-me-portmap-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -7,7 +7,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-portmap-udp':
+    shorewall6::rule { 'net-me-portmap-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -15,7 +15,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.statd-tcp':
+    shorewall6::rule { 'net-me-rpc.statd-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -23,7 +23,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.statd-udp':
+    shorewall6::rule { 'net-me-rpc.statd-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -31,7 +31,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'me-net-rpc.statd-tcp':
+    shorewall6::rule { 'me-net-rpc.statd-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -39,7 +39,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'me-net-rpc.statd-udp':
+    shorewall6::rule { 'me-net-rpc.statd-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -47,7 +47,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.lockd-tcp':
+    shorewall6::rule { 'net-me-rpc.lockd-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -55,7 +55,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.lockd-udp':
+    shorewall6::rule { 'net-me-rpc.lockd-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -63,7 +63,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.mountd-tcp':
+    shorewall6::rule { 'net-me-rpc.mountd-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -71,7 +71,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.mountd-udp':
+    shorewall6::rule { 'net-me-rpc.mountd-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -79,7 +79,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.rquotad-tcp':
+    shorewall6::rule { 'net-me-rpc.rquotad-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -87,7 +87,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.rquoata-udp':
+    shorewall6::rule { 'net-me-rpc.rquoata-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -95,7 +95,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.nfsd-tcp':
+    shorewall6::rule { 'net-me-rpc.nfsd-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -103,7 +103,7 @@ class shorewall::rules::nfsd {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-rpc.nfsd-udp':
+    shorewall6::rule { 'net-me-rpc.nfsd-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',

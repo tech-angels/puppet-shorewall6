@@ -1,5 +1,5 @@
-class shorewall::rules::tinc {
-    shorewall::rule { 'net-me-tinc-tcp':
+class shorewall6::rules::tinc {
+    shorewall6::rule { 'net-me-tinc-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -7,7 +7,7 @@ class shorewall::rules::tinc {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'me-net-tinc-tcp':
+    shorewall6::rule { 'me-net-tinc-tcp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',
@@ -15,7 +15,7 @@ class shorewall::rules::tinc {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-tinc-udp':
+    shorewall6::rule { 'net-me-tinc-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',
@@ -23,7 +23,7 @@ class shorewall::rules::tinc {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'me-net-tinc-udp':
+    shorewall6::rule { 'me-net-tinc-udp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'udp',

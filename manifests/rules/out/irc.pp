@@ -1,5 +1,5 @@
-class shorewall::rules::out::irc {
-    shorewall::rule{'me-net-irc-tcp':
+class shorewall6::rules::out::irc {
+    shorewall6::rule{'me-net-irc-tcp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

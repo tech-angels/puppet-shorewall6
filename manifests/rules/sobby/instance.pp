@@ -1,5 +1,5 @@
-define shorewall::rules::sobby::instance( $port ){
-  shorewall::rule {
+define shorewall6::rules::sobby::instance( $port ){
+  shorewall6::rule {
     "net-me-tcp_sobby_${name}":
       source          => 'net',
       destination     => '$FW',

@@ -1,5 +1,5 @@
-class shorewall::rules::smtps {
-	shorewall::rule {'net-me-smtps-tcp':
+class shorewall6::rules::smtps {
+	shorewall6::rule {'net-me-smtps-tcp':
         source          =>      'net',
         destination     =>      '$FW',
         proto           =>      'tcp',

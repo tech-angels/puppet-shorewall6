@@ -1,5 +1,5 @@
-class shorewall::rules::dns {
-    shorewall::rule {
+class shorewall6::rules::dns {
+    shorewall6::rule {
         'net-me-tcp_dns':
                         source          =>      'net',
                         destination     =>      '$FW',

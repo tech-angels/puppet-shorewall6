@@ -1,5 +1,5 @@
-class shorewall::rules::pop3 {
-    shorewall::rule {
+class shorewall6::rules::pop3 {
+    shorewall6::rule {
         'net-me-tcp_pop3_s':
             source          =>      'net',
             destination     =>      '$FW',

@@ -1,5 +1,5 @@
-class shorewall::rules::keyserver {
-	shorewall::rule {
+class shorewall6::rules::keyserver {
+	shorewall6::rule {
 		'net-me-tcp_keyserver':
       source      => 'net',
   		destination     => '$FW',

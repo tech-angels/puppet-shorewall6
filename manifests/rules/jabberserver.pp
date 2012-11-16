@@ -1,5 +1,5 @@
-class shorewall::rules::jabberserver {
-  shorewall::rule {
+class shorewall6::rules::jabberserver {
+  shorewall6::rule {
     'net-me-tcp_jabber':
             source          => 'net',
             destination     => '$FW',

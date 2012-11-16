@@ -1,5 +1,5 @@
-class shorewall::rules::gitdaemon {
-        shorewall::rule {'net-me-tcp_gitdaemon':
+class shorewall6::rules::gitdaemon {
+        shorewall6::rule {'net-me-tcp_gitdaemon':
             source          => 'net',
             destination     => '$FW',
             proto           => 'tcp',

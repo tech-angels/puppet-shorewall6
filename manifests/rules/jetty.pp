@@ -1,6 +1,6 @@
-class shorewall::rules::jetty {
+class shorewall6::rules::jetty {
     # open jetty port
-    shorewall::rule {
+    shorewall6::rule {
         'net-me-jetty-tcp':
             source          => 'net',
             destination     => '$FW',

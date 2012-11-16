@@ -1,4 +1,4 @@
-define shorewall::providers(
+define shorewall6::providers(
     $provider,
     $number = '',
     $mark = '',
@@ -9,7 +9,7 @@ define shorewall::providers(
     $copy = '',
     $order='100'
 ){
-    shorewall::entry{"providers-${order}-${name}":
+    shorewall6::entry{"providers-${order}-${name}":
         line => "# ${name}\n${provider} ${number} ${mark} ${duplicate} ${interface} ${gateway} ${options} ${copy}"
     }
 }

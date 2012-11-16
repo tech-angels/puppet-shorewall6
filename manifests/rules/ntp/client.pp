@@ -1,6 +1,6 @@
-class shorewall::rules::ntp::client {
+class shorewall6::rules::ntp::client {
     # open ntp udp port to fetch time
-    shorewall::rule {'me-net-udp_ntp':
+    shorewall6::rule {'me-net-udp_ntp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'udp',

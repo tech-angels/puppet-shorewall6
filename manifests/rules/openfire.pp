@@ -1,7 +1,7 @@
-class shorewall::rules::openfire {
-  include shorewall::rules::jaberserver
+class shorewall6::rules::openfire {
+  include shorewall6::rules::jaberserver
 
-  shorewall::rule { 'me-all-openfire-tcp':
+  shorewall6::rule { 'me-all-openfire-tcp':
     source          => '$FW',
     destination     => 'all',
     proto           => 'tcp',

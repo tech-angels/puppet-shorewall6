@@ -1,5 +1,5 @@
-class shorewall::rules::ntp::server {
-    shorewall::rule {'net-me-udp_ntp':
+class shorewall6::rules::ntp::server {
+    shorewall6::rule {'net-me-udp_ntp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',

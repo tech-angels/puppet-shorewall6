@@ -32,7 +32,7 @@ Example from node.pp:
 node xy {
 	$shorewall_startup="0"  # create shorewall ruleset but don't startup
 	include config::site-shorewall
-	shorewall::rule {
+	shorewall6::rule {
 		'incoming-ssh': source => 'all', destination => '$FW',  action  => 'SSH/ACCEPT', order => 200;
 		'incoming-puppetmaster': source => 'all', destination => '$FW',  action  => 'Puppetmaster/ACCEPT', order => 300;
 		'incoming-imap': source => 'all', destination => '$FW',  action  => 'IMAP/ACCEPT', order => 300;
@@ -45,16 +45,16 @@ class config::site-shorewall {
         include shorewall
 
 	# If you want logging:
-        #shorewall::params {
+        #shorewall6::params {
         #       'LOG':            value => 'debug';
         #	'MAILSERVER':     value => $shorewall_mailserver;
         #}
 
-        shorewall::zone {'net':
+        shorewall6::zone {'net':
                 type => 'ipv4';
         }
 
-        shorewall::rule_section { 'NEW':
+        shorewall6::rule_section { 'NEW':
                 order => 100;
         }
 
@@ -66,13 +66,13 @@ class config::site-shorewall {
                 '': { $shorewall_main_interface = 'eth0' }
         }
 
-        shorewall::interface {"$shorewall_main_interface":
+        shorewall6::interface {"$shorewall_main_interface":
                 zone    => 'net',
                 rfc1918  => $shorewall_rfc1918_maineth,
                 options => 'tcpflags,blacklist,nosmurfs';
         }
 
-        shorewall::policy {
+        shorewall6::policy {
                 'fw-to-fw':
                   sourcezone              =>      '$FW',
                   destinationzone         =>      '$FW',
@@ -94,7 +94,7 @@ class config::site-shorewall {
 
         
         # default Rules : ICMP 
-        shorewall::rule { 'allicmp-to-host': source => 'all', destination => '$FW', order  => 200, action  => 'AllowICMPs/ACCEPT';
+        shorewall6::rule { 'allicmp-to-host': source => 'all', destination => '$FW', order  => 200, action  => 'AllowICMPs/ACCEPT';
         }
  
 }

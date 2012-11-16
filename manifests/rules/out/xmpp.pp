@@ -1,5 +1,5 @@
-class shorewall::rules::out::xmpp {
-    shorewall::rule{'me-net-xmpp-tcp':
+class shorewall6::rules::out::xmpp {
+    shorewall6::rule{'me-net-xmpp-tcp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

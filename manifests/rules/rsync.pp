@@ -1,5 +1,5 @@
-class shorewall::rules::rsync {
-    shorewall::rule{'me-net-rsync-tcp':
+class shorewall6::rules::rsync {
+    shorewall6::rule{'me-net-rsync-tcp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

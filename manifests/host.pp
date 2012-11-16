@@ -1,9 +1,9 @@
-define shorewall::host(
+define shorewall6::host(
     $zone,
-    $options = 'tcpflags,blacklist,norfc1918',
+    $options = 'tcpflags,blacklist',
     $order='100'
 ){
-    shorewall::entry{"hosts-${order}-${name}":
+    shorewall6::entry{"hosts-${order}-${name}":
         line => "${zone} ${name} ${options}"
     }
 }

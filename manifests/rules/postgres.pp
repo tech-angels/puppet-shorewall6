@@ -1,5 +1,5 @@
-class shorewall::rules::postgres {
-    shorewall::rule { 'net-me-tcp_postgres':
+class shorewall6::rules::postgres {
+    shorewall6::rule { 'net-me-tcp_postgres':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',

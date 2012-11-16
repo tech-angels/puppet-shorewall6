@@ -1,5 +1,5 @@
-class shorewall::rules::jetty::ssl {
-    shorewall::rule {
+class shorewall6::rules::jetty::ssl {
+    shorewall6::rule {
         'net-me-jettyssl-tcp':
             source          => 'net',
             destination     => '$FW',

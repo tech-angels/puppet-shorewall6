@@ -1,7 +1,7 @@
 #
 # Shorewall version 3.4 - Params File
 #
-# /etc/shorewall/params
+# /etc/shorewall6/params
 #
 #       Assign any variables that you need here.
 #
@@ -13,14 +13,14 @@
 #
 #               NET_IF=eth0
 #               NET_BCAST=130.252.100.255
-#               NET_OPTIONS=routefilter,norfc1918
+#               NET_OPTIONS=routefilter
 #
-#       Example (/etc/shorewall/interfaces record):
+#       Example (/etc/shorewall6/interfaces record):
 #
 #               net     $NET_IF         $NET_BCAST      $NET_OPTIONS
 #
 #       The result will be the same as if the record had been written
 #
-#               net     eth0            130.252.100.255 routefilter,norfc1918
+#               net     eth0            130.252.100.255 routefilter
 #
 ###############################################################################

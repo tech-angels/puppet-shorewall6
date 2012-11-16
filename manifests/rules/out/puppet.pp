@@ -1,7 +1,7 @@
-class shorewall::rules::out::puppet {
-    include ::shorewall::rules::puppet
+class shorewall6::rules::out::puppet {
+    include ::shorewall6::rules::puppet
     # we want to connect to the puppet server
-    shorewall::rule { 'me-net-puppet_tcp':
+    shorewall6::rule { 'me-net-puppet_tcp':
         source          =>      '$FW',
         destination     =>      'net:$PUPPETSERVER',
         proto           =>      'tcp',

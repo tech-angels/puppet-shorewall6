@@ -2,21 +2,19 @@
 #### Managed by puppet, modify only on the puppetmaster
 ####
 ###############################################################################
-#  /etc/shorewall/shorewall.conf V4.0 - Change the following variables to
+#  /etc/shorewall6/shorewall6.conf V3.4 - Change the following variables to
 #  match your setup
 #
-#  This program is under GPL
+#  This program is under GPL [http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt]
 #
-#  This file should be placed in /etc/shorewall
+#  This file should be placed in /etc/shorewall6
 #
-#  (c) 1999,2000,2001,2002,2003,2004,2005,
-#      2006,2007 - Tom Eastep (teastep@shorewall.net)
-#
+#  (c) 1999,2000,2001,2002,2003,2004,2005 - Tom Eastep (teastep@shorewall.net)
 #
 #  For information about the settings in this file, type "man shorewall.conf"
 #
 #  Additional information is available at 
-#  http://www.shorewall.net/Documentation.htm#Conf
+#  http://www.shorewall.net/3.0/Documentation.htm#Conf
 ###############################################################################
 #		       S T A R T U P   E N A B L E D
 ###############################################################################
@@ -74,12 +72,12 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin
 
 SHOREWALL_SHELL=/bin/sh
 
-SUBSYSLOCK=""
+SUBSYSLOCK="/var/lock/subsys/shorewall6"
 
 MODULESDIR=
 
 # add puppet delivered files in front
-CONFIG_PATH=/etc/shorewall/puppet:/etc/shorewall:/usr/share/shorewall
+CONFIG_PATH=/etc/shorewall6/puppet:/etc/shorewall6:/usr/share/shorewall6
 
 RESTOREFILE=
 
@@ -95,7 +93,6 @@ DROP_DEFAULT="Drop"
 REJECT_DEFAULT="Reject"
 ACCEPT_DEFAULT="none"
 QUEUE_DEFAULT="none"
-NFQUEUE_DEFAULT="none"
 
 ###############################################################################
 #                        R S H / R C P  C O M M A N D S
@@ -108,9 +105,9 @@ RCP_COMMAND='scp ${files} ${root}@${system}:${destination}'
 #			F I R E W A L L	  O P T I O N S
 ###############################################################################
 
-IP_FORWARDING=Keep
+IP_FORWARDING=On
 
-ADD_IP_ALIASES=Yes
+ADD_IP_ALIASES=No
 
 ADD_SNAT_ALIASES=No
 
@@ -122,13 +119,13 @@ TC_EXPERT=No
 
 CLEAR_TC=Yes
 
-MARK_IN_FORWARD_CHAIN=No
+MARK_IN_FORWARD_CHAIN=Yes
 
 CLAMPMSS=No
 
-ROUTE_FILTER=Yes
+ROUTE_FILTER=No
 
-DETECT_DNAT_IPADDRS=No
+DETECT_DNAT_IPADDRS=Yes
 
 MUTEX_TIMEOUT=60
 
@@ -146,11 +143,11 @@ BRIDGING=No
 
 DYNAMIC_ZONES=No
 
-PKTTYPE=Yes
+PKTTYPE=No
 
 RFC1918_STRICT=No
 
-MACLIST_TABLE=filter
+MACLIST_TABLE=mangle
 
 MACLIST_TTL=
 
@@ -158,7 +155,7 @@ SAVE_IPSETS=No
 
 MAPOLDACTIONS=No
 
-FASTACCEPT=No
+FASTACCEPT=Yes
 
 IMPLICIT_CONTINUE=Yes
 
@@ -170,23 +167,13 @@ OPTIMIZE=0
 
 EXPORTPARAMS=Yes
 
-EXPAND_POLICIES=Yes
-
-KEEP_RT_TABLES=No
-
-DELETE_THEN_ADD=Yes
-
-MULTICAST=No
-
-DONT_LOAD=
-
 ###############################################################################
 #			P A C K E T   D I S P O S I T I O N
 ###############################################################################
 
 BLACKLIST_DISPOSITION=DROP
 
-MACLIST_DISPOSITION=REJECT
+MACLIST_DISPOSITION=DROP
 
 TCP_FLAGS_DISPOSITION=DROP
 

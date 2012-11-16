@@ -1,5 +1,5 @@
-class shorewall::rules::ipsec {
-    shorewall::rule {
+class shorewall6::rules::ipsec {
+    shorewall6::rule {
       'net-me-ipsec-udp':
         source          => 'net',
         destination     => '$FW',

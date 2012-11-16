@@ -1,5 +1,5 @@
-class shorewall::rules::mysql {
-	shorewall::rule {
+class shorewall6::rules::mysql {
+	shorewall6::rule {
 		'net-me-tcp_mysql':
             source          => 'net',
             destination     => '$FW',

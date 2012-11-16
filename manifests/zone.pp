@@ -1,4 +1,4 @@
-define shorewall::zone(
+define shorewall6::zone(
     $type,
     $options = '-',
     $in = '-',
@@ -7,7 +7,7 @@ define shorewall::zone(
     $order = 100
 ){
     $real_name = $parent ? { '-' => $name, default => "${name}:${parent}" }
-    shorewall::entry { "zones-${order}-${name}":
+    shorewall6::entry { "zones-${order}-${name}":
         line => "${real_name} ${type} ${options} ${in} ${out}"
     }
 }

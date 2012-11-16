@@ -1,5 +1,5 @@
-class shorewall::rules::smtp::disable inherits shorewall::rules::smtp {
-  Shorewall::Rule['net-me-smtp-tcp']{
+class shorewall6::rules::smtp::disable inherits shorewall6::rules::smtp {
+  Shorewall6::Rule['net-me-smtp-tcp']{
     action          => 'DROP'
   }
 }

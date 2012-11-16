@@ -1,5 +1,5 @@
-class shorewall::rules::syslog {
-    shorewall::rule { 'net-me-syslog-udp':
+class shorewall6::rules::syslog {
+    shorewall6::rule { 'net-me-syslog-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',

@@ -1,5 +1,5 @@
-class shorewall::rules::out::smtp {
-    shorewall::rule {
+class shorewall6::rules::out::smtp {
+    shorewall6::rule {
         'me-net-tcp_smtp':
             source          =>  '$FW',
             destination     =>  'net',

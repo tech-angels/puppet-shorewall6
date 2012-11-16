@@ -1,5 +1,5 @@
-class shorewall::rules::http {
-    shorewall::rule { 'net-me-http-tcp':
+class shorewall6::rules::http {
+    shorewall6::rule { 'net-me-http-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',

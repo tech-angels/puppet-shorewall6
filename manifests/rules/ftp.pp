@@ -1,5 +1,5 @@
-class shorewall::rules::ftp {
-    shorewall::rule { 'net-me-ftp-tcp':
+class shorewall6::rules::ftp {
+    shorewall6::rule { 'net-me-ftp-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',

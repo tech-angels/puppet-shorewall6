@@ -1,5 +1,5 @@
-class shorewall::rules::out::managesieve {
-    shorewall::rule {
+class shorewall6::rules::out::managesieve {
+    shorewall6::rule {
         'me-net-tcp_managesieve':
             source          =>      '$FW',
             destination     =>      'net',

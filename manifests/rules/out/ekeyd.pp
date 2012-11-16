@@ -1,5 +1,5 @@
-define shorewall::rules::out::ekeyd($ekeyd_host) {
-  shorewall::rule { "me-${name}-tcp_ekeyd":
+define shorewall6::rules::out::ekeyd($ekeyd_host) {
+  shorewall6::rule { "me-${name}-tcp_ekeyd":
     source          => '$FW',
     destination     => "${name}:${ekeyd_host}",
     proto           => 'tcp',

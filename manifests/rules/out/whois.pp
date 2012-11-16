@@ -1,6 +1,6 @@
-class shorewall::rules::out::whois {
+class shorewall6::rules::out::whois {
     # open whois tcp port 
-    shorewall::rule {'me-net-tcp_whois':
+    shorewall6::rule {'me-net-tcp_whois':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

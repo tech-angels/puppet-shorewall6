@@ -1,6 +1,6 @@
-class shorewall::rules::tomcat {
+class shorewall6::rules::tomcat {
     # open tomcat port
-    shorewall::rule {
+    shorewall6::rule {
         'net-me-tomcat-tcp':
             source          => 'net',
             destination     => '$FW',

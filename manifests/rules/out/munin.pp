@@ -1,5 +1,5 @@
-class shorewall::rules::out::munin {
-    shorewall::rule { 'me-net-rcp_muninhost':
+class shorewall6::rules::out::munin {
+    shorewall6::rule { 'me-net-rcp_muninhost':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

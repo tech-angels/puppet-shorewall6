@@ -1,5 +1,5 @@
-class shorewall::rules::tftp {
-    shorewall::rule { 'net-me-tftp-tcp':
+class shorewall6::rules::tftp {
+    shorewall6::rule { 'net-me-tftp-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',
@@ -7,7 +7,7 @@ class shorewall::rules::tftp {
         order           => 240,
         action          => 'ACCEPT';
     }
-    shorewall::rule { 'net-me-tftp-udp':
+    shorewall6::rule { 'net-me-tftp-udp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'udp',

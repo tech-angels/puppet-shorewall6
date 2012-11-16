@@ -1,5 +1,5 @@
-class shorewall::rules::http::disable inherits shorewall::rules::http {
-  Shorewall::Rule['net-me-http-tcp']{
+class shorewall6::rules::http::disable inherits shorewall6::rules::http {
+  Shorewall6::Rule['net-me-http-tcp']{
         action  => 'DROP',
     }
 }

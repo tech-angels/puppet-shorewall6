@@ -1,5 +1,5 @@
-class shorewall::rules::out::git {
-    shorewall::rule{'me-net-git-tcp':
+class shorewall6::rules::out::git {
+    shorewall6::rule{'me-net-git-tcp':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

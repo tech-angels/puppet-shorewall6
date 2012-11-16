@@ -1,5 +1,5 @@
-class shorewall::rules::out::ssh::remove inherits shorewall::rules::out::ssh {
-  Shorewall::Rule['me-net-tcp_ssh']{
+class shorewall6::rules::out::ssh::remove inherits shorewall6::rules::out::ssh {
+  Shorewall6::Rule['me-net-tcp_ssh']{
     ensure => absent,
   }
 }

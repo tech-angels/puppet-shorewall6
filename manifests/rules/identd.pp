@@ -1,5 +1,5 @@
-class shorewall::rules::identd {
-  shorewall::rule { 'net-me-identd-tcp':
+class shorewall6::rules::identd {
+  shorewall6::rule { 'net-me-identd-tcp':
     source          => 'net',
     destination     => '$FW',
     proto           => 'tcp',

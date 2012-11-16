@@ -1,5 +1,5 @@
-class shorewall::rules::out::silc {
-  shorewall::rule{
+class shorewall6::rules::out::silc {
+  shorewall6::rule{
     'me-net-silc-tcp':
       source          => '$FW',
       destination     => 'net',

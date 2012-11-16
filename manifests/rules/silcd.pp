@@ -1,5 +1,5 @@
-class shorewall::rules::silcd {
-  shorewall::rule{
+class shorewall6::rules::silcd {
+  shorewall6::rule{
     'net-me-silcd-tcp':
       source          => 'net',
       destination     => '$FW',

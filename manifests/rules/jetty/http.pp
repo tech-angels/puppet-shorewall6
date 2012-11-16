@@ -1,6 +1,6 @@
-class shorewall::rules::jetty::http {
+class shorewall6::rules::jetty::http {
     # dnat
-    shorewall::rule {
+    shorewall6::rule {
         'dnat-http-to-jetty':
             destination     =>      "net:${ipaddress}:8080",
             destinationport =>      '80',

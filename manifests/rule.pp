@@ -1,5 +1,5 @@
 # mark is new in 3.4.4
-define shorewall::rule(
+define shorewall6::rule(
     $ensure = present,
     $action,
     $source,
@@ -13,7 +13,7 @@ define shorewall::rule(
     $mark = '',
     $order
 ){
-  shorewall::entry{"rules-${order}-${name}":
+  shorewall6::entry{"rules-${order}-${name}":
     ensure => $ensure,
     line => "# ${name}\n${action} ${source} ${destination} ${proto} ${destinationport} ${sourceport} ${originaldest} ${ratelimit} ${user} ${mark}",
   }

@@ -1,26 +1,17 @@
-define shorewall::interface(
+define shorewall6::interface(
     $zone,
     $broadcast = 'detect',
     $options = 'tcpflags,blacklist,routefilter,nosmurfs,logmartians',
-    $rfc1918 = false,
     $dhcp = false,
     $order = 100
 ){
-    if $rfc1918 {
-        if $dhcp {
-            $options_real = "${options},dhcp"
-        } else {
-            $options_real = $options
-        }
+    if $dhcp {
+        $options_real = "${options},dhcp"
     } else {
-        if $dhcp {
-            $options_real = "${options},norfc1918,dhcp"
-        } else {
-            $options_real = "${options},norfc1918"
-        }
+        $options_real = $options
     }
 
-    shorewall::entry { "interfaces-${order}-${name}":
+    shorewall6::entry { "interfaces-${order}-${name}":
         line => "${zone} ${name} ${broadcast} ${options_real}",
     }
 }

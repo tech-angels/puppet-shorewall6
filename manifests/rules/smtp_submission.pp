@@ -1,5 +1,5 @@
-class shorewall::rules::smtp_submission {
-    shorewall::rule { 'net-me-smtp_submission-tcp':
+class shorewall6::rules::smtp_submission {
+    shorewall6::rule { 'net-me-smtp_submission-tcp':
         source          => 'net',
         destination     => '$FW',
         proto           => 'tcp',

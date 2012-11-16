@@ -1,5 +1,5 @@
-class shorewall::rules::ekeyd {
-  shorewall::rule { 'net-me-tcp_ekeyd':
+class shorewall6::rules::ekeyd {
+  shorewall6::rule { 'net-me-tcp_ekeyd':
     source          => 'net',
     destination     => '$FW',
     proto           => 'tcp',

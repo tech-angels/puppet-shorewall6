@@ -1,5 +1,5 @@
-class shorewall::rules::out::ssh {
-    shorewall::rule { 'me-net-tcp_ssh':
+class shorewall6::rules::out::ssh {
+    shorewall6::rule { 'me-net-tcp_ssh':
         source          => '$FW',
         destination     => 'net',
         proto           => 'tcp',

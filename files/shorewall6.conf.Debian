@@ -2,12 +2,12 @@
 #### Managed by puppet, modify only on the puppetmaster
 ####
 ###############################################################################
-#  /etc/shorewall/shorewall.conf V4.0 - Change the following variables to
+#  /etc/shorewall6/shorewall.conf V4.0 - Change the following variables to
 #  match your setup
 #
 #  This program is under GPL
 #
-#  This file should be placed in /etc/shorewall
+#  This file should be placed in /etc/shorewall6
 #
 #  (c) 1999,2000,2001,2002,2003,2004,2005,
 #      2006,2007 - Tom Eastep (teastep@shorewall.net)
@@ -79,7 +79,7 @@ SUBSYSLOCK=""
 MODULESDIR=
 
 # add puppet delivered files in front
-CONFIG_PATH=/etc/shorewall/puppet:/etc/shorewall:/usr/share/shorewall
+CONFIG_PATH=/etc/shorewall6/puppet:/etc/shorewall6:/usr/share/shorewall6
 
 RESTOREFILE=
 
