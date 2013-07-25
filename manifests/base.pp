@@ -1,6 +1,6 @@
 class shorewall6::base {
     
-    if $operatingsystem != 'Debian' or $lsbdistcodename != 'squeeze' {
+    if $operatingsystem != 'Debian' or ($lsbdistcodename != 'squeeze' and $lsbdistcodename != 'wheezy') {
       fail "The shorewall6 module hasn't been tested on $operatingsystem $lsbdistcodename"
     }
 
