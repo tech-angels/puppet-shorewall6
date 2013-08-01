@@ -1,0 +1,7 @@
+#
+# Shorewall version  3.4 - Proxyndp File
+#
+# See http://www.shorewall.net/manpages6/shorewall6-proxyndp.html for additional information.
+#
+###############################################################################
+#ADDRESS        INTERFACE       EXTERNAL        HAVEROUTE       PERSISTENT
