@@ -28,8 +28,8 @@ class shorewall6 {
   shorewall6::managed_file { rules: }
   # See http://www.shorewall.net/3.0/Documentation.htm#Masq
   shorewall6::managed_file{ masq: }
-  # See http://www.shorewall.net/3.0/Documentation.htm#ProxyArp
-  shorewall6::managed_file { proxyarp: }
+  # See http://www.shorewall.net/manpages6/shorewall6-proxyndp.html
+  shorewall6::managed_file { proxyndp: }
   # See http://www.shorewall.net/3.0/Documentation.htm#NAT
   shorewall6::managed_file { nat: }
   # See http://www.shorewall.net/3.0/Documentation.htm#Blacklist
