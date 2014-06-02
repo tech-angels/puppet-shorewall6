@@ -1,22 +1,13 @@
 ####
 #### Managed by puppet, modify only on the puppetmaster
-####
+###
 ###############################################################################
-#  /etc/shorewall6/shorewall.conf V4.0 - Change the following variables to
-#  match your setup
 #
-#  This program is under GPL
-#
-#  This file should be placed in /etc/shorewall6
-#
-#  (c) 1999,2000,2001,2002,2003,2004,2005,
-#      2006,2007 - Tom Eastep (teastep@shorewall.net)
-#
+#  Shorewall Version 4 -- /etc/shorewall6/shorewall6.conf
 #
 #  For information about the settings in this file, type "man shorewall.conf"
 #
-#  Additional information is available at 
-#  http://www.shorewall.net/Documentation.htm#Conf
+#  Manpage also online at http://www.shorewall.net/manpages/shorewall.conf.html
 ###############################################################################
 #		       S T A R T U P   E N A B L E D
 ###############################################################################
@@ -30,17 +21,14 @@ STARTUP_ENABLED=Yes
 VERBOSITY=1
 
 ###############################################################################
-#                              C O M P I L E R
-#      (setting this to 'perl' requires installation of Shorewall-perl)
-###############################################################################
-
-SHOREWALL_COMPILER=shell
-
-###############################################################################
-#			       L O G G I N G
+#		                L O G G I N G
 ###############################################################################
 
 LOGFILE=/var/log/messages
+
+STARTUP_LOG=/var/log/shorewall6-init.log
+
+LOG_VERBOSITY=2
 
 LOGFORMAT="Shorewall:%s:%s:"
 
@@ -54,21 +42,23 @@ LOGALLNEW=
 
 BLACKLIST_LOGLEVEL=
 
-MACLIST_LOG_LEVEL=info
-
 TCP_FLAGS_LOG_LEVEL=info
 
-RFC1918_LOG_LEVEL=info
-
 SMURF_LOG_LEVEL=info
-
-LOG_MARTIANS=No
 
 ###############################################################################
 #	L O C A T I O N	  O F	F I L E S   A N D   D I R E C T O R I E S
 ###############################################################################
 
-IPTABLES=
+IP6TABLES=
+
+IP=
+
+TC=
+
+IPSET=
+
+PERL=/usr/bin/perl
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/local/sbin
 
@@ -78,12 +68,9 @@ SUBSYSLOCK=""
 
 MODULESDIR=
 
-# add puppet delivered files in front
-CONFIG_PATH=/etc/shorewall6/puppet:/etc/shorewall6:/usr/share/shorewall6
+CONFIG_PATH="/etc/shorewall6/puppet:/etc/shorewall6:/usr/share/shorewall6:/usr/share/shorewall"
 
 RESTOREFILE=
-
-IPSECFILE=zones
 
 LOCKFILE=
 
@@ -108,27 +95,21 @@ RCP_COMMAND='scp ${files} ${root}@${system}:${destination}'
 #			F I R E W A L L	  O P T I O N S
 ###############################################################################
 
-IP_FORWARDING=Keep
+IP_FORWARDING=On
 
-ADD_IP_ALIASES=Yes
-
-ADD_SNAT_ALIASES=No
-
-RETAIN_ALIASES=No
-
-TC_ENABLED=Internal
+TC_ENABLED=No
 
 TC_EXPERT=No
 
-CLEAR_TC=Yes
+TC_PRIOMAP="2 3 3 3 2 3 1 1 2 2 2 2 2 2 2 2"
 
-MARK_IN_FORWARD_CHAIN=No
+CLEAR_TC=No
+
+MARK_IN_FORWARD_CHAIN=Yes
 
 CLAMPMSS=No
 
 ROUTE_FILTER=No
-
-DETECT_DNAT_IPADDRS=No
 
 MUTEX_TIMEOUT=60
 
@@ -138,9 +119,7 @@ BLACKLISTNEWONLY=Yes
 
 DELAYBLACKLISTLOAD=No
 
-MODULE_SUFFIX=
-
-DISABLE_IPV6=Yes
+MODULE_SUFFIX=ko
 
 BRIDGING=No
 
@@ -148,9 +127,9 @@ DYNAMIC_ZONES=No
 
 PKTTYPE=Yes
 
-RFC1918_STRICT=No
+NULL_ROUTE_RFC1918=No
 
-MACLIST_TABLE=filter
+MACLIST_TABLE=mangle
 
 MACLIST_TTL=
 
@@ -180,14 +159,43 @@ MULTICAST=No
 
 DONT_LOAD=
 
+AUTO_COMMENT=Yes
+
+MANGLE_ENABLED=Yes
+
+USE_DEFAULT_RT=No
+
+RESTORE_DEFAULT_ROUTE=Yes
+
+AUTOMAKE=No
+
+WIDE_TC_MARKS=No
+
+TRACK_PROVIDERS=No
+
+ZONE2ZONE=2
+
+ACCOUNTING=Yes
+
+DYNAMIC_BLACKLIST=Yes
+
+OPTIMIZE_ACCOUNTING=No
+
+LOAD_HELPERS_ONLY=No
+
+REQUIRE_INTERFACE=No
+
+FORWARD_CLEAR_MARK=Yes
+
 ###############################################################################
 #			P A C K E T   D I S P O S I T I O N
 ###############################################################################
 
 BLACKLIST_DISPOSITION=DROP
 
-MACLIST_DISPOSITION=REJECT
+MACLIST_DISPOSITION=DROP
 
 TCP_FLAGS_DISPOSITION=DROP
 
 #LAST LINE -- DO NOT REMOVE
+
